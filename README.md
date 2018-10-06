@@ -136,13 +136,13 @@ func main() {
 	fmt.Println()
 
 	// Create a hook for MessageBoxW.
-	gominhook.CreateHook(procedure.Addr(), uintptr(C.MessageBoxWOverrideHellYeah), uintptr(unsafe.Pointer(&fpMessageBoxW)))
+	err = gominhook.CreateHook(procedure.Addr(), uintptr(C.MessageBoxWOverrideHellYeah), uintptr(unsafe.Pointer(&fpMessageBoxW)))
 	if err != nil {
 		log.Fatalln(err)
 	}
 
 	// Enable the hook for MessageBoxW.
-	gominhook.EnableHook(gominhook.AllHooks)
+	err = gominhook.EnableHook(gominhook.AllHooks)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -159,7 +159,7 @@ func main() {
 	fmt.Println()
 
 	// Disable the hook for MessageBoxW.
-	gominhook.DisableHook(gominhook.AllHooks)
+	err = gominhook.DisableHook(gominhook.AllHooks)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -196,7 +196,7 @@ func main() {
 
 ### More information
 
-See `minhook` ref for c/c++ users.
+See `minhook` ref for C/C++ users.
 - https://github.com/TsudaKageyu/minhook
 - https://github.com/TsudaKageyu/minhook/blob/master/include/MinHook.h
 - https://github.com/TsudaKageyu/minhook/wiki
