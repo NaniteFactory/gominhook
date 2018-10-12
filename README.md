@@ -12,13 +12,29 @@ This stuff heavily relies on `cgo`.
     
     `go get -v github.com/nanitefactory/gominhook`
 
-2. Have `MinHook.x64.dll` with your project.
-    
-    You can get it from either of these sites:
+2. Get `Minhook` library.
 
-    - [gominhook/MinHook_133_bin/bin/MinHook.x64.dll](./MinHook_133_bin/bin/MinHook.x64.dll)
+	---
 
-    - https://github.com/TsudaKageyu/minhook/releases
+	**For x64 users:**
+
+	Have `MinHook.x64.dll` with your project.
+
+	You can get it from either of these sites:
+
+	- [gominhook/MinHook_133_bin/bin/MinHook.x64.dll](./MinHook_133_bin/bin)
+
+	- https://github.com/TsudaKageyu/minhook/releases
+
+	---
+
+	**For x86 users:**
+
+	You need `MinHook.gcc.x86.dll`.
+
+	- [gominhook/MinHook_133_bin/bin/MinHook.gcc.x86.dll](./MinHook_133_bin/bin)
+
+	---
 
 3. That's it!
 
@@ -63,6 +79,8 @@ which is straightforward & effective enough. xD
 - - -
 
 ### Sample
+
+- https://github.com/NaniteFactory/hookwin10calc
 
 This example below tries to hook `user32.MessageBoxW`.
 
