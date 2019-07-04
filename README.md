@@ -78,9 +78,10 @@ which is straightforward & effective enough. xD
 
 - - -
 
-### Sample
+### Samples
 
 - https://github.com/NaniteFactory/hookwin10calc
+- https://gist.github.com/NaniteFactory/181ac6be5ac13c200612677f17e3f352
 
 This example below tries to hook `user32.MessageBoxW`.
 
@@ -105,7 +106,7 @@ import (
 typedef int (WINAPI *MESSAGEBOXW)(HWND, LPCWSTR, LPCWSTR, UINT);
 
 // (!) This way you can connect/convert a go function to a c function.
-int WINAPI MessageBoxWOverrideHellYeah(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
+int MessageBoxWOverrideHellYeah(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
 */
 import "C"
 
